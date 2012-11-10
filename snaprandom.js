@@ -6,7 +6,8 @@ snapRandom();
 // Draws a shape based on the global variables
 function snapRandom(){
   var snapWidth = 1000;
-  var snapSize = 1000;
+  var snapHeight = snapWidth;
+  var snapSize = 100;
   var snapColumns = 2;
   var snapColor = "Random";
   var snapR = 128;
@@ -37,12 +38,11 @@ function snapRandom(){
     snapGreen = snapMakeColor($G);
     snapBlue = snapMakeColor($B);
     snapColor = 'rgba(' + snapRed + ',' + snapGreen + ',' + snapBlue + ',' + snapA + ')'; 
-    //alert(snapGreen);
   }
   
   // SET SIZE
   function snapSetSize(){
-    snapSize  =  snapWidth/2;
+    snapSize  =  snapWidth/25;
     snapColumns = snapWidth / snapSize;
     snapSize = snapMakeSize(snapSize); 
   }
@@ -54,15 +54,18 @@ function snapRandom(){
   load1Image(1);
   // Here is where the images are drawn
   function load1Image(q) {
-    var $canvas = $('<canvas>Your browser does not support HTML5 Canvas</canvas>');
-    $canvas.attr('width',snapWidth).attr('height', snapWidth*.8);
-    $context = $canvas[0].getContext('2d');
     $thisSnap = $('.SnapRandom:eq(' + (q-1) + ')');
     // Set colors based on div properties, if they exist.
     if($thisSnap.attr('data-red')) {snapR = $thisSnap.attr('data-red');}
     if($thisSnap.attr('data-green')) {snapG = $thisSnap.attr('data-green');}
     if($thisSnap.attr('data-blue')) {snapB = $thisSnap.attr('data-blue');}
+    // Set dimensions based on div properties, if they exist.
     if($thisSnap.attr('data-width')) {snapWidth = $thisSnap.attr('data-width');}
+    if($thisSnap.attr('data-height')) {snapHeight = $thisSnap.attr('data-height');}
+    //SET UP THE CANVAS
+    var $canvas = $('<canvas>Your browser does not support HTML5 Canvas</canvas>');
+    $canvas.attr('width',snapWidth).attr('height',snapHeight);
+    $context = $canvas[0].getContext('2d');
 
     // First draw a background
     snapSize = snapWidth;
@@ -73,13 +76,13 @@ function snapRandom(){
       for (var n = 0; n < snapColumns; n++) {
         snapSetSize();
         snapSetColor(snapR,snapG,snapB);
-        snapRectangle(n * (snapWidth/snapColumns), i * ((snapWidth/snapColumns) * .8));
+        snapRectangle(n * (snapWidth/snapColumns), i * ((snapWidth/snapColumns) * (snapHeight/snapWidth)));
       }
     }
   	function snapRectangle(snapX,snapY) {
       $context.save();
     	$context.fillStyle = snapColor;
-    	$context.fillRect(snapX, snapY, snapSize, snapSize * .8);
+    	$context.fillRect(snapX, snapY, snapSize, snapSize * (snapHeight/snapWidth));
       $context.restore();
     }
     var dataURL = $canvas[0].toDataURL();
