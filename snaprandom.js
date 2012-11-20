@@ -5,7 +5,7 @@ snapRandom();
 
 // Draws a shape based on the global variables
 function snapRandom(){
-  var snapWidth = 1000;
+  var snapWidth = 200;
   var snapHeight = snapWidth;
   var snapSize = 100;
   var snapColumns = 2;
