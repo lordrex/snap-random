@@ -1,5 +1,5 @@
 /* Lord Rex 2012 */
-$("document").ready( function() {
+$(document).ready( function() {
 snapRandom();
 
 
