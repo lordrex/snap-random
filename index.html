@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Snap Random</title>
+  <title>Snap Random Demo</title>
   <style>
-    #snapRandom img { margin-top: 1.5em; }
-    body {
-      font-size: 150%;
-      font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
-    }
+    body{font-size: 150%; font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;}
   </style>
 </head>
 <body>
-<div class="container">
   <h1>Snap Random</h1>
+  <p>Default image size, even color distribution.</p>
   <div class="SnapRandom"></div>
-  <div class="SnapRandom" data-red="64" data-green="200" data-blue="128" data-width="800" data-height="200"></div>
+  <p>Facebook cover size, should be greenish blue.</p>
+  <div class="SnapRandom" data-red="64" data-green="200" data-blue="128" data-width="831" data-height="315"></div>
+	<p>Another example, now 300x400 and purplish.</p>
   <div class="SnapRandom" data-red="160" data-green="50" data-blue="180" data-width="400" data-height="300"></div>
+  <!-- THE SCRIPTS YOU'LL NEED -->
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="jquery.imagesloaded.min.js"></script>
 <script src="snaprandom.js"></script>
