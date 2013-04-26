@@ -7,11 +7,11 @@ SnapRandom allows you to include dynamically generated images in a web page.
 
 ## Requirements
 
-SnapRandom requires jQuery and the [ImagesLoaded](https://github.com/desandro/imagesloaded) jQuery plugin. ImagesLoaded forces SnapRandom to genrate one image at a time, instead of tryign to generate them all at once. This allows you to include many SnapRandom images in a page without slowing or even crashing the browser. 
+SnapRandom requires jQuery and the [ImagesLoaded](https://github.com/desandro/imagesloaded) jQuery plugin. ImagesLoaded forces SnapRandom to generate one image at a time, instead of trying to generate them all at once. This allows you to include many SnapRandom images in a page without slowing or even crashing the browser. 
 
 ## Installation
 
-Include the jQuery, ImagewLoaded and SnapRandom JavaScript files in your document. There are several ways to do this, but here is one: 
+Include the jQuery, ImageLoaded and SnapRandom JavaScript files in your document. There are several ways to do this, but here is one: 
 
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="jquery.imagesloaded.min.js"></script>
@@ -29,7 +29,7 @@ You can set a variety of options for the image that is generated using data attr
 
 #### data-red, data-green and data-blue
 
-The attributes `data-red`, `data-green` and `data-blue`provide a rough guideline for the colors in the image. The colors are randomized, but adjusting these numbers can sku the image more itno one color thant another. The value for these attributes must be a number between 0 and 256. If n number is provided, sthe default number is 128. For to make an image more green, set the value of `data-green` higher that 128 and /or set the values of `data-red` and `data-blue`lower thant 'data-green'.
+The attributes `data-red`, `data-green` and `data-blue`provide a rough guideline for the colors in the image. The colors are randomized, but adjusting these numbers can skew the image more into one color than another. The value for these attributes must be a number between 0 and 256. If no number is provided, the default number is 128. For example, to make an image greener, set the value of `data-green` higher that 128 and /or set the values of `data-red` and `data-blue`lower than 'data-green'.
  
 #### data-width and data-height
 
@@ -41,4 +41,4 @@ You can set the width and height of a SnapRandom image using the `data-width` an
 
 This will produce purple-ish 400x300 image. 
 
-See more examples in the `index.html`file included when downloading SnapRandom.
+See more examples in the `index.html` file included when downloading SnapRandom.
